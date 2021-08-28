@@ -1,0 +1,63 @@
+.bottom-nav {
+  display: none;
+}
+
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 400;
+    //give nav it's own compsite layer
+    will-change: transform;
+    transform: translateZ(0);
+    display: flex;
+    height: 50px;
+    background-color: white;
+    border-top: 1px solid #f0f7fc;
+
+
+    .mat-tab-group {
+      width: 100%;
+      .mat-tab-header {
+        width: 100%;
+        height: 100%;
+
+        .mat-tab-label-container {
+          height: 100%;
+          .mat-tab-labels {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            .mat-tab-label {
+              width: 25%;
+              margin-right: 0;
+              height: 100%;
+              justify-content: center;
+              .mat-tab-label-content {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+              }
+            }
+            .mat-tab-label-active {
+              color: blue !important;
+            }
+          }
+          .mat-ink-bar {
+            visibility: hidden !important;
+          }
+        }
+      }
+    }
+  }
+
+
+.mat-tab-icon-and-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

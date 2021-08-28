@@ -1,10 +1,46 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  bottomTabs: BottomTabsGroup[] = [
+    {
+      label: 'My Feed',
+      url: 'home',
+      icon: 'home',
+      menuUrl: '',
+    },
+    {
+      label: 'Prizes',
+      url: 'prize',
+      icon: 'emoji_events',
+      menuUrl: '#',
+    },
+    {
+      label: 'Offers',
+      url: 'offer',
+      icon: 'local_offer',
+      menuUrl: '#',
+    },
+    {
+      label: 'Codes',
+      url: 'code',
+      icon: 'dialpad',
+      menuUrl: '#',
+    },
+  ];
+
+  onClickBottomTab(event: any): void {
+    console.log(event);
+  }
+}
+export interface BottomTabsGroup {
+  label?: string;
+  icon?: string;
+  url?: string;
+  menuUrl?: string;
 }

@@ -1,4 +1,15 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="bottom-nav bottom-nav_tab">
+    <mat-tab-group>
+      <ng-container *ngFor="let tab of bottomTabs ; let i = index">
+        <mat-tab *ngIf="i < 4"  >
+          <ng-template mat-tab-label   >
+            <div class="mat-tab-icon-and-text"  [routerLink]="['/' , tab.url]" >
+              <mat-icon>{{tab.icon}}</mat-icon>
+              {{ tab.label }}
+            </div>
+          </ng-template>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
+  </div>
+  <router-outlet></router-outlet>
